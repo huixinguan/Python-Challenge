@@ -1,4 +1,6 @@
 Code:
+solution #1:
+
 import string
 def decode(text):
     alpha = string.ascii_lowercase
@@ -6,6 +8,20 @@ def decode(text):
     table = str.maketrans(alpha, new_alpha)
     result = text.translate(table)
     print(result)
+    
+    
+solution #2:
+import string
+def decode(text):
+    alpha = string.ascii_lowercase
+    result = []
+    for i in text:
+        if i in alpha:
+            result.append(alpha[alpha.index(i)+2-26])
+        else:
+            result.append(i)
+    return "".join(result)
+    
     
 result:
 decode('map') = ocr
