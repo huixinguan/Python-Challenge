@@ -1,0 +1,11 @@
+Code:
+import string
+def decode(text):
+    alpha = string.ascii_lowercase
+    new_alpha = alpha[2:]+alpha[:2]
+    table = str.maketrans(alpha, new_alpha)
+    result = text.translate(table)
+    print(result)
+    
+result:
+decode('map') = ocr
