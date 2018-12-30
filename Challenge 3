@@ -1,0 +1,16 @@
+Code:
+
+import re
+def small_letter(line):
+    matchObj = re.findall(r'[^A-Z]+[A-Z]{3}([a-z]{1})[A-Z]{3}[^A-Z]+', line)
+    if matchObj:
+        print("".join(matchObj))
+    else:
+        print('No match')
+
+with open('challenge3.txt', 'r') as f:
+    lines = f.read()
+small_letter(lines)
+
+Result:
+linkedlist
