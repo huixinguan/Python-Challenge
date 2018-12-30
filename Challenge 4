@@ -1,0 +1,24 @@
+Code:
+
+import re
+import requests
+num = '12345'
+# num = str(int(16044/2))
+url = "http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing={}".format(num)
+while True:
+    res = requests.get(url).text
+    matchObj = re.findall(r'and the next nothing is (\d+)', res)
+    matchObj2 = "".join(re.findall(r'[^\d+]', url))
+    if matchObj:
+        print(matchObj[0])
+        new_url = matchObj2 + matchObj[0]
+        url = new_url
+    else:
+        print("No match.")
+        print(res)
+        break
+        
+        
+Solution:
+
+peak.html
