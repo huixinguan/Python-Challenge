@@ -1,0 +1,13 @@
+Code:
+
+import pickle
+from urllib.request import urlopen
+url = "http://www.pythonchallenge.com/pc/def/banner.p"
+data = pickle.load(urlopen(url))
+result = ""
+for item in data:
+    # print([k * v for k, v in item])
+    print("".join([k*v for k,v in item]))
+    
+result:
+channel
